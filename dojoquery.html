@@ -1,0 +1,77 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-default" style="background-color:red;color:white;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand home" href="#"></a>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 id="target">DojoQuery!</h1>
+        <p>basic JQuery rewritten (click and hover)</p>
+        <p>Hover and click on me and explore my code</p>
+    </div>
+</div>
+
+<script>
+
+
+var $Dojo = function(element){
+
+  var elem = document.getElementById(element);
+  
+
+  elem.click = function(callback){
+
+    elem.addEventListener("click",callback);
+  }
+
+  elem.hover = function(callback){
+
+   elem.addEventListener("mouseover",callback)
+
+  }
+ 
+  elem.color = function(color){
+
+    elem.style.color = color;
+
+  }
+  return elem;
+
+
+}
+
+$Dojo("target").click(function(){
+  this.innerHTML = "hello click";
+  this.style.backgroundColor="green";
+});
+
+$Dojo("target").hover(function(){
+  this.innerHTML = "hello hover";
+  this.style.backgroundColor="yellow";
+});
+
+</script>
+
+</body>
+
+
+</html>
